@@ -448,6 +448,24 @@
                 "label": "Right"
               }
             },
+            "link_type": {
+              "label": "Link type",
+              "options__1": {
+                "label": "Arrow"
+              },
+              "options__2": {
+                "label": "Button"
+              },
+              "options__3": {
+                "label": "Text"
+              }
+            },
+            "button_style_secondary": {
+              "label": "Use outline button style"
+            },
+            "link_text": {
+              "label": "Link text"
+            },
             "link": {
               "label": "Link"
             }

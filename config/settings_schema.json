@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "8.0.0",
-    "theme_author": "Shopify",
+    "theme_name": "Artsy",
+    "theme_version": "1.0.0",
+    "theme_author": "Ayo_Osota",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
@@ -50,7 +50,7 @@
       {
         "type": "color",
         "id": "colors_accent_1",
-        "default": "#121212",
+        "default": "#3341C1",
         "label": "t:settings_schema.colors.settings.colors_accent_1.label",
         "info": "t:settings_schema.colors.settings.colors_accent_1.info"
       },
@@ -62,7 +62,7 @@
       {
         "type": "color",
         "id": "colors_accent_2",
-        "default": "#334FB4",
+        "default": "#79C2D2",
         "label": "t:settings_schema.colors.settings.colors_accent_2.label"
       },
       {
@@ -77,14 +77,14 @@
       {
         "type": "color",
         "id": "colors_text",
-        "default": "#121212",
+        "default": "#292929",
         "label": "t:settings_schema.colors.settings.colors_text.label",
         "info": "t:settings_schema.colors.settings.colors_text.info"
       },
       {
         "type": "color",
         "id": "colors_outline_button_labels",
-        "default": "#121212",
+        "default": "#4693ED",
         "label": "t:settings_schema.colors.settings.colors_outline_button_labels.label",
         "info": "t:settings_schema.colors.settings.colors_outline_button_labels.info"
       },
@@ -102,7 +102,7 @@
       {
         "type": "color",
         "id": "colors_background_2",
-        "default": "#F3F3F3",
+        "default": "#E2E2E2",
         "label": "t:settings_schema.colors.settings.colors_background_2.label"
       },
       {
