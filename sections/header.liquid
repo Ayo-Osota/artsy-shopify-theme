@@ -100,6 +100,7 @@
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+    top: var(--header-top);
   }
 
   @media screen and (min-width: 750px) {
@@ -744,7 +745,14 @@
 
       window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
 
+      
+      // console.log(announcementBar.style);
+      // // console.log(announcementBar.classList.contains("shopify-section-header-sticky"));
+      // console.log(announcementBar);
+      // console.log(announcementBarHeight);
+
       if (this.headerIsAlwaysSticky) {
+        this.setHeaderTop();
         this.header.classList.add('shopify-section-header-sticky');
       };
 
@@ -757,8 +765,26 @@
 
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.addEventListener('scroll', this.onScrollHandler, false);
+      // window.addEventListener('scroll', this.setHeaderTop);
 
       this.createObserver();
+    }
+
+    setHeaderTop() {
+      const announcementBar = document.querySelector('.announcement-bar-section');
+      const announcementBarHeight = announcementBar.offsetHeight;
+      if (this.header.classList.contains("shopify-section-header-hidden")) {
+        document.documentElement.style.setProperty('--header-top', `${-1 * this.header.offsetHeight}px`);
+      } else if (announcementBar.classList.contains("shopify-section-header-sticky") && 
+      announcementBar.classList.contains("shopify-section-header-hidden") === false) {
+        console.log(announcementBar);
+          document.documentElement.style.setProperty('--header-top', `${announcementBarHeight - 1}px`);
+          console.log("true");
+        } else if (announcementBar.classList.contains("shopify-section-header-hidden") || 
+        announcementBar.classList.contains("shopify-section-header-sticky") === false) {
+          document.documentElement.style.setProperty('--header-top', `0px`);
+          console.log("false");
+        }
     }
 
     setHeaderHeight() {
@@ -780,6 +806,8 @@
     }
 
     onScroll() {
+      this.setHeaderTop();
+
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
@@ -810,6 +838,7 @@
     }
 
     hide() {
+      this.setHeaderTop();
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
       this.closeMenuDisclosure();
@@ -817,6 +846,7 @@
     }
 
     reveal() {
+      this.setHeaderTop();
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.add('shopify-section-header-sticky', 'animate');
       this.header.classList.remove('shopify-section-header-hidden');

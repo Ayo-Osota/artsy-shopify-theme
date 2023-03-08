@@ -468,6 +468,9 @@
             },
             "link": {
               "label": "Link"
+            },
+            "close_button": {
+              "label": "Add close button"
             }
           }
         }

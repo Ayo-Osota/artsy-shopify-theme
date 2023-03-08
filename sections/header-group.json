@@ -8,8 +8,8 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
+            "text": "Welcome to our store. Huge sale happening now! Get amazing discounts on all products. Limited time offer.",
+            "text_alignment": "left",
             "color_scheme": "background-1",
             "link": ""
           }
